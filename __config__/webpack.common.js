@@ -4,7 +4,7 @@ const htmlWebpackPlugin = require("html-webpack-plugin")
 const DIST_DIR = path.resolve(__dirname, "../", "dist")
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./src/main.js",
     output: {
         filename: "[name].[contenthash].js",
         path: DIST_DIR,
@@ -30,9 +30,21 @@ module.exports = {
     },
     plugins: [
         new htmlWebpackPlugin({
-            template: "./public/index.html",
+            template: "./src/pages/index.html",
             inject: true,
-            title: "TITULO DA PÁGINA"
+            cache: false,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true,
+            },
         }),
     ]
 }
