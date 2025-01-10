@@ -1,4 +1,4 @@
-# Website Nomeio Digital LTDA
+# Landing page Nomeio Digital LTDA
 
 Install dependencies.
 
